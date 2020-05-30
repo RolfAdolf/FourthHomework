@@ -1,0 +1,12 @@
+syms 'k';
+syms 'x';
+s1 = 1/(k^2);
+s2 = (-1)^((k^2 + k)/2) * k/(2^k);
+s3 = x^k;
+s4 = ((3-x)^(2*k))/sqrt(k);
+s5 = 1/((x-k)^3);
+s11 = symsum(s1, k, 1, inf);
+s22 = symsum(s2, k, 0, inf);
+s33 = symsum(s3, k, 0, inf);
+s44 = symsum(s4, k, 1, inf);
+s55 = symsum(s5, k, -inf, inf);
