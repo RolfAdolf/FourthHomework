@@ -1,0 +1,12 @@
+syms 'x';
+syms 'h';
+f1 = x*exp(-x);
+f2 = tan(x)^(tan(2*x));
+f3 = atan(1/(1-x));
+f4 = (7*x^3+x^2 -1)/(5*x^2+2*x+1);
+f5 = (sqrt(x+h) - sqrt(x))/h;
+lim1 = limit(f1, x, inf);
+lim2 = limit(f2, x, pi/4);
+lim3 = limit(f3, x, 1, 'Right');
+lim4 = limit(f4, x, inf);
+lim5 = limit(f5, h, 0);
