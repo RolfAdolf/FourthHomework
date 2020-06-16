@@ -1,0 +1,8 @@
+syms x;
+T= taylor((sin(x))^2, 'Order', 10);
+hold on;
+fplot(T)
+grid on;
+z= [-2*pi:0.0001:2*pi];
+y=(sin(z)).^2;
+plot(z,y);
