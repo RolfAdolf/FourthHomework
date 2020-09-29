@@ -1,15 +1,13 @@
-syms 'x';
+x = sym('x');
 f1 = sqrt(1 - x^2)/x^2;
 f2 = 1/((sin(x))^3);
 f3 = ((sin(2*x) + 1)^(1/7))*cos(2*x);
 f4 = (15*sqrt(x+3))/(((x+3)^2) * sqrt(x));
 f5 = 1/(1 + x^2);
-f6 = (1/(x^2 - 1));
 f7 = (log(sin(x)));
 int1 = int(f1);
 int2 = int(f2);
 int3 = int(f3);
 int4 = int(f4, 1/8, 1);
 int5 = int(f5, 0, +inf);
-int6 = int(f6, -2, 2);
 int7 = int(f7, 0, pi/2);
