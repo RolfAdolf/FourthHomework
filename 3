@@ -1,11 +1,11 @@
-syms 'x';
+x = sym('x');
 f1 = atan(x)/2 - x/(2*((1+x^2)^2));
 f2 = 3*x^4 - 14*x^3 + 12*x^2 + 24*x + 6;
 f3 = (sin(3*x) + cos(3*x))^2;
 f4 = log(x^2 + 2)/2 + (2-x)/(4*(x^2 + 2)) - 1/(4*sqrt(2)) * atan(x/sqrt(2));
-f5 = (1/6)* ln((x-3)/(x+3));
-dif1 = factor(diff(f1));
-dif2 = factor(diff(f2));
-dif3 = factor(diff(f3));
-dif4 = factor(diff(f4));
-dif5 = factor(diff(f5));
+f5 = (1/6)* log((x-3)/(x+3));
+dif1 = collect(diff(f1));
+dif2 = collect(diff(f2));
+dif3 = expand(diff(f3));
+dif4 = collect(diff(f4));
+dif5 = collect(diff(f5));
