@@ -1,13 +1,18 @@
-syms 'x';
-y = exp(1/(1-x^2))/(1+x^2);
-F = @(x)exp(1./(1-x.^2))./(1+x.^2);
-ezplot(y, -7, 7);
-syms 'x';
+x = sym('x');
 y = exp(1/(1-x^2))/(1+x^2);
 hold on;
-ezplot(y, -7, 7);
-plot([-1 -1], [-20 20])
-plot([1 1], [-20 20])
-dify = diff(y)
-minmax = solve(dify);
-plot(minmax, F(minmax), 'o');
+ezplot(y, [-3 3]);
+
+roots = eval(solve(1-x^2))';
+
+lim1 = limit(y, +Inf);
+lim2 = limit(y, -Inf);
+
+crit_pts = solve(diff(y));
+
+if (eval(lim1) ~= Inf) 
+plot([-3 3], eval(lim2)*[1 1], '--r')
+end;
+if (eval(lim2) ~= Inf) 
+plot([-3 3], eval(lim2)*[1 1], '--r', roots(1)*[1 1], [-20 20], '--b', roots(2)*[1 1], [-20 20], '--b', crit_pts, subs(y, crit_pts), '*')
+end;
